@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -9,7 +10,9 @@ namespace EntityLayer.Concrete
 {
     public class Heading
     {
+        [Key]
         public int HeadingID { get; set; }
+        [StringLength(100)]
         public string HeadingName { get; set; }
         public DateTime HeadingDate { get; set; }
 
