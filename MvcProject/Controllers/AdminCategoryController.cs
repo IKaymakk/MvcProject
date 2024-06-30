@@ -1,5 +1,7 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -16,6 +18,8 @@ namespace MvcProject.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         public ActionResult Index()
         {
+            int categoryCount = cm.GetCategoryCount();
+            ViewBag.CategoryCount = categoryCount;
             var values = cm.GetList();
             return View(values);
         }
@@ -43,6 +47,38 @@ namespace MvcProject.Controllers
             }
             return View();
         }
+        public ActionResult DeleteCategory(int id)
+        {
+            var value = cm.GetCategory(id);
+            cm.CategoryDelete(value);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult EditCategory(int id)
+        {
+            var value = cm.GetCategory(id);
+            return View(value);
+        }
+        [HttpPost]
+        public ActionResult EditCategory(Category p)
+        {
+            CategoryValidator cv = new CategoryValidator();
+            ValidationResult results = cv.Validate(p);
+            if (results.IsValid)
+            {
+                cm.CategoryUpdate(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var x in results.Errors)
+                {
+                    ModelState.AddModelError(x.PropertyName, x.ErrorMessage);
+                }
+            }
+            return View();
+        }
+
 
     }
 }

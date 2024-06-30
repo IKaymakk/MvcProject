@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditCategory", "AdminCategory", FormMethod.Post))
+{
+    <div style="padding:1em 2em 0em 2em;height:100%" class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.CategoryID, new { @readonly = "readonly", @style = "max-width:5%;padding:0 1em 0 1.4em;", @class = "form-control" })
+        <hr />
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", @style = "max-width:30%;", @placeholder = "Teknoloji , Müzik ..." })
+        @Html.ValidationMessageFor(x => x.CategoryName)
+        <hr />
+        @Html.Label("Kategori Açıklaması")
+        @Html.TextAreaFor(x => x.CategoryDescription,
+            new
+            {
+                @class = "form-control",
+                @style = "max-width:30%;" +
+                "min-height:120px;max-height:auto",
+                @placeholder = "Teknoloji tutkunlarının buluştuğu sayfa..."
+            })        @Html.ValidationMessageFor(x => x.CategoryDescription)
+            <hr />
+            <button style="padding:0.5em 9.65em 0.5em 9.65em" class="btn btn-info">Kaydet</button>
+        </div>
+    }
+

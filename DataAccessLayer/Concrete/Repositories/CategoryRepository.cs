@@ -14,10 +14,21 @@ namespace DataAccessLayer.Concrete.Repositories
     {
         Context context = new Context();
         DbSet<Category> _object;
+
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Category c)
         {
             _object.Remove(c);
             context.SaveChanges();
+        }
+
+        public Category Get(Expression<Func<Category, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public void Insert(Category c)

@@ -6,7 +6,7 @@
 
 @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
 {
-    <div style="padding:1em 2em 0em 2em" class="form-group">
+    <div style="padding:0.5em 2em 0em 2em" class="form-group">
         <hr />
         @Html.Label("Kategori Adı")
         @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", @style = "max-width:30%", @placeholder="Teknoloji , Müzik ..." })

@@ -6,7 +6,10 @@
 }
 
 <div style="padding:1.2em 1.5em 1.2em 1.5em">
-
+    <div class="btn btn-dark" style="color:white;width:100%;display:flex">
+        <i style="padding-top:0.6em" class="nav-icon fas fa-book"></i>
+        <h3 style="padding-left:0.3em">Kategoriler (@ViewBag.CategoryCount)</h3>
+    </div>
     <table class="table table-bordered table-hover table-light table-striped">
         <tr class="table table-secondary" style="text-align:center;color:black">
             <th>#</th>
@@ -23,12 +26,13 @@
                 <td>@x.CategoryDescription</td>
                 <td style="text-align:center">@x.CategoryStatus</td>
                 <td style="text-align:center">
-                    <a style="padding:0.45em 1.7em 0.275em 1.7em" class="btn btn-outline-danger">Sil</a>
-                    <a class="btn btn-outline-success">Güncelle</a>
+                    <a href="/AdminCategory/DeleteCategory/@x.CategoryID" style="padding:0.45em 1.7em 0.275em 1.7em" class="btn btn-outline-danger">Sil</a>
+                    <a href="/AdminCategory/EditCategory/@x.CategoryID" class="btn btn-outline-success">Güncelle</a>
                     <a class="btn btn-outline-info">Başlıklar</a>
                 </td>
             </tr>
         }
     </table>
     <a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori Girişi</a>
+
 </div>
