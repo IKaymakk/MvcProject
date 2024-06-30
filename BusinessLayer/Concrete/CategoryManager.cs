@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete.Repositories;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,18 +10,22 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    internal class CategoryManager
+    public class CategoryManager : ICategoryService
     {
-        GenericRepository<Category> gr = new GenericRepository<Category>();
+        ICategoryDal _categorydal;
+        public CategoryManager(ICategoryDal categorydal)
+        {
+            _categorydal = categorydal;
+        }
+        public void CategoryAdd(Category category)
+        {
+            _categorydal.Insert(category);
+        }
 
-        public List<Category> GetAllBL()
+        public List<Category> GetList()
         {
-            return gr.List();
+            return _categorydal.List();
         }
-        public void CategoryAddBL(Category c)
-        {
-            //Şartları Katmanlı Mimariyi İçin Tanımlamadım
-            gr.Insert(c);
-        }
+
     }
 }
