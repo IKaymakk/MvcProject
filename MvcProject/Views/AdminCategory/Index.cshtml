@@ -5,34 +5,42 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div style="padding:1.2em 1.5em 1.2em 1.5em">
-    <div class="btn btn-dark" style="color:white;width:100%;display:flex">
-        <i style="padding-top:0.6em" class="nav-icon fas fa-book"></i>
-        <h3 style="padding-left:0.3em">Kategoriler (@ViewBag.CategoryCount)</h3>
+<div style="padding:1em 1.5em 0em 1.5em">
+    <div class="btn " style="background-color: #e1e1e177; width: 100%; height: 60px; display: flex">
+        <div style="display:flex">
+            <div style="padding-top: 0.8em;padding-left:0.3em">
+                <i style="color:black" data-feather="briefcase" width="20"></i>
+            </div>
+            <h5 style="color: black; padding-left: 0.5em; padding-top: 0.6em; font-family:monospace;">@ViewBag.CategoryCount Adet Kategori Mevcut</h5>
+        </div>
     </div>
-    <table class="table table-bordered table-hover table-light table-striped">
-        <tr class="table table-secondary" style="text-align:center;color:black">
-            <th>#</th>
-            <th style="min-width:8em;max-width:11em">Kategori</th>
-            <th>Açıklama</th>
-            <th>Durum</th>
-            <th>Düzenleme</th>
-        </tr>
-        @foreach (var x in Model)
-        {
-            <tr>
-                <th style="text-align:center">@x.CategoryID</th>
-                <td style="text-align:center">@x.CategoryName</td>
-                <td>@x.CategoryDescription</td>
-                <td style="text-align:center">@x.CategoryStatus</td>
-                <td style="text-align:center">
-                    <a href="/AdminCategory/DeleteCategory/@x.CategoryID" style="padding:0.45em 1.7em 0.275em 1.7em" class="btn btn-outline-danger">Sil</a>
-                    <a href="/AdminCategory/EditCategory/@x.CategoryID" class="btn btn-outline-success">Güncelle</a>
-                    <a class="btn btn-outline-info">Başlıklar</a>
-                </td>
+    <div style="padding-top:2em" class="table-responsive">
+        <table class="table table-hover" style="background-color:white;color:black">
+            <tr class="table btn-outline-primary" style="text-align:center;">
+                <th>#</th>
+                <th style="min-width:8em;max-width:11em">Kategori</th>
+                <th>Açıklama</th>
+                <th>Durum</th>
+                <th>Düzenleme</th>
             </tr>
-        }
-    </table>
-    <a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori Girişi</a>
+            @foreach (var x in Model)
+            {
+                <tr style="color:#808080">
+                    <th style="text-align:center;padding-top:1.9em">@x.CategoryID</th>
+                    <td style="text-align:center">@x.CategoryName</td>
+                    <td>@x.CategoryDescription</td>
+                    <td style="text-align:center">@x.CategoryStatus</td>
+                    <td style="text-align:center;width:30%">
+                        <div>
+                            <a style="padding:0.55em 2em 0.55em 2em" href="/AdminCategory/DeleteCategory/@x.CategoryID" class="btn btn-outline-danger">Sil</a>
+                            <a href="/AdminCategory/EditCategory/@x.CategoryID" class="btn btn-outline-success">Güncelle</a>
+                            <a class="btn btn-outline-info">Başlıklar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+        <a href="/AdminCategory/AddCategory" class="btn btn-primary">Yeni Kategori Girişi</a>
+    </div>
 
 </div>

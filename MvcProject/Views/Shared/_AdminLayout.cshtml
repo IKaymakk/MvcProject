@@ -2,187 +2,109 @@
     Layout = null;
 }
 
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AdminLTE 3 | Dashboard 3</title>
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="~/voler-master/dist/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="~/voler-master/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/voler-master/dist/assets/css/app.css">
+    <link rel="shortcut icon" href="~/voler-master/assets/images/favicon.svg" type="image/x-icon">
+
+
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to to the body tag
-to get the desired effect
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="~/AdminLTE-3.0.4/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                     style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
-            </a>
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                    </div>
+<body>
+    <div id="app">
+        <div id="sidebar" class='active'>
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-menu">
+                    <ul style="margin-top:0.2em" class="menu">
+                        <li class='sidebar-title'>AdmIn Menu</li>
+                        <li class="sidebar-item  ">
+                            <a href="/AdminCategory/Index" class='sidebar-link'>
+                                <i data-feather="briefcase" width="20"></i>
+                                <span>Kategoriler</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a href="#" class='sidebar-link'>
+                                <i data-feather="align-justify" width="20"></i>
+                                <span>Başlıklar</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="/Writer/Index" class='sidebar-link'>
+                                <i data-feather="users" width="20"></i>
+                                <span>Yazarlar</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item has-sub ">
+                            <a href="#" class='sidebar-link'>
+                                <i data-feather="bar-chart-2" width="20"></i>
+                                <span>Grafikler</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item active ">
+                            <a href="form-layout.html" class='sidebar-link'>
+                                <i data-feather="info" width="20"></i>
+                                <span>Hakkımızda</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="form-editor.html" class='sidebar-link'>
+                                <i data-feather="mail" width="20"></i>
+                                <span>İletişim & Mesajlar </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="edit" width="20"></i>
+                                <span>Yazılar</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="activity" width="20"></i>
+                                <span>Yetkilendirme</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="book-open" width="20"></i>
+                                <span>Galeri</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="alert-triangle" width="20"></i>
+                                <span>Hata Sayfaları</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="log-out" width="20"></i>
+                                <p class='sidebar-title'>Çıkış Yap</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="AdminCategory/Index" class="nav-link ">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Kategoriler
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th-list"></i>
-                                <p>
-                                    Başlıklar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Yazarlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Grafikler
-                                    <i class="right fas text-info fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pie Grafik</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Hakkımızda
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-mail-bulk"></i>
-                                <p>
-                                    İletişim & Mesajlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>
-                                    Yazılar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Galeri
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon text-info fas fa-angle-double-right"></i>
-                                <p>
-                                    Siteye Git
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
-                                <i class="nav-icon text-danger far fa-folder"></i>
-                                <p>
-                                    Hata Sayfaları
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-arrow-alt-circle-down text-danger"></i>
-                                <p>
-                                    Çıkış Yap
-                                </p>
-                            </a>
-                        </li>
-
-                        </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Main content -->
-            <div class="content">
-                @RenderBody()
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
+        <div id="main">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
     </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
-    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
-    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+    <script src="~/voler-master/dist/assets/js/feather-icons/feather.min.js"></script>
+    <script src="~/voler-master/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/voler-master/dist/assets/js/app.js"></script>
+    <script src="~/voler-master/dist/assets/js/main.js"></script>
 </body>
 </html>
+
