@@ -71,6 +71,10 @@
     <Compile Include="Migrations\202406281804137_mig1.designer.cs">
       <DependentUpon>202406281804137_mig1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407012043496_mig_WriterNewColumns.cs" />
+    <Compile Include="Migrations\202407012043496_mig_WriterNewColumns.designer.cs">
+      <DependentUpon>202407012043496_mig_WriterNewColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202406281804137_mig1.resx">
       <DependentUpon>202406281804137_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407012043496_mig_WriterNewColumns.resx">
+      <DependentUpon>202407012043496_mig_WriterNewColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

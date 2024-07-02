@@ -25,14 +25,14 @@
                           @class = "form-control",
                           @style = "max-width:30%;",
                           @placeholder = "Teknoloji tutkunlarının buluştuğu sayfa..."
-                      })        @Html.ValidationMessageFor(x => x.CategoryDescription)            <div class="form-control-icon">
-                        <i data-feather="more-horizontal"></i>
-                    </div>
-                </div>
-                @Html.ValidationMessageFor(x => x.CategoryDescription)
-                <hr />
-                <button style="padding:0.5em 2em 0.5em 2em" class="btn btn-primary">Kaydet</button>
+                           })                <div class="form-control-icon">
+                <i data-feather="more-horizontal"></i>
             </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.CategoryDescription)
+        <hr />
+        <button style="padding:0.5em 2em 0.5em 2em" class="btn btn-primary">Kaydet</button>
+    </div>
 }
 
 

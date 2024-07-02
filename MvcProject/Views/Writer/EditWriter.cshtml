@@ -1,0 +1,86 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "EditWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post))
+{
+    <div style="padding:0.5em 2em 0em 2em" class="form-group">
+
+        @Html.Label("Yazar Adı")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="user"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterName)
+        <hr />
+        @Html.Label("Yazar Soyadı")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="user"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterSurname)
+        <hr />
+        @Html.Label("Mail Adresi")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="mail"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterMail)
+        <hr />
+        @Html.Label("Telefon Numarası")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.WriterTel, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="phone-call"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterTel)
+        <hr />
+        @Html.Label("Fotoğrafı")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="image"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterImage)
+        <hr />
+        @Html.Label("Şifre")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="lock"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterPassword)
+        <hr />
+        @Html.Label("Yazar Açıklaması")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.WriterAbout,
+                      new
+                      {
+                          @class = "form-control",
+                          @style = "max-width:30%;",
+                          @placeholder = "Kişisel gelişim alanında yazılar yazmakta..."
+                      })
+            <div class="form-control-icon">
+                <i data-feather="edit-3"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.WriterAbout)
+        <hr />
+        <button style="padding:0.5em 4em 0.5em 4em" class="btn btn-primary">Kaydet</button>
+        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control", @style = "max-width:1%;opacity:0%" })
+
+    </div>
+}
+
+

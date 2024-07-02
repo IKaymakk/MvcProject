@@ -69,6 +69,14 @@
  * 5. Utilities
  * 6. Responsive
  */
+.page-header {
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 28px rgba(0,0,0,.08);
+    box-shadow: 0 0 28px rgba(0,0,0,.08);
+    margin-bottom: 30px;
+    padding: 20px
+}
 .color-primary {
   color: #5A8DEE;
 }

@@ -3915,6 +3915,8 @@
     <Content Include="voler-master\src\assets\scss\_main.scss" />
     <Content Include="voler-master\src\assets\scss\_utilities.scss" />
     <Content Include="voler-master\src\assets\scss\_variables.scss" />
+    <Content Include="Views\Writer\AddWriter.cshtml" />
+    <Content Include="Views\Writer\EditWriter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

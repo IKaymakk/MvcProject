@@ -20,23 +20,20 @@
 </head>
 <body>
 
-    <div style="padding: 0em 7em 0em 0em;" class="main-container">
+    <div style="padding: 0em 1.7em 0em 0em;" class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
                 <div class="container pd-0">
-                    <div class="page-header" style="background-color: #e1e1e177 ">
+                    <div class="page-header" style="background-color: white ">
                         <div class="row ">
                             <div class="col-md-12 col-sm-11">
                                 <div style="display:flex" class="title">
                                     <div style="padding-right: 0.8em;">
                                         <i data-feather="users" width="20"></i>
                                     </div>
-                                    <h5 style="color:black;font-family:monospace">@ViewBag.Count Adet Yazar Mevcut</h5>
+                                    <h5 style="color:black;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@ViewBag.Count Adet Yazar Mevcut</h5>
+                                    <a style="font-family:monospace;padding-left:36em;color:blue" class=" h5" href="/Writer/AddWriter">Yeni Yazar Girişi</a>
                                 </div>
-                                <nav aria-label="breadcrumb" role="navigation">
-                                    <ol class="breadcrumb">
-                                    </ol>
-                                </nav>
                             </div>
                         </div>
                     </div>
@@ -45,8 +42,8 @@
                             @foreach (var x in Model)
                             {
 
-                                <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                                    <div class="contact-directory-box">
+                                <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12" >
+                                    <div style="max-height:450px;" class="contact-directory-box">
                                         <div class="contact-dire-info text-center">
                                             <div class="contact-avatar">
                                                 <span>
@@ -56,18 +53,18 @@
                                             <div class="contact-name">
 
                                                 <h4>@x.WriterName @x.WriterSurname</h4>
-                                                <p>0505 015 77 98</p>
+                                                <p>@x.WriterTel</p>
                                                 <div class="work text-success"><i class="ion-android-mail"></i> @x.WriterMail</div>
                                             </div>
                                             <div class="contact-skill">
                                                 <span class="badge badge-primary "></span>
                                             </div>
-                                            <div class="profile-sort-desc">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
+                                            <div style="max-height:50px" class="profile-sort-desc">
+                                                @x.WriterAbout
                                             </div>
                                         </div>
                                         <div class="view-contact">
-                                            <a href="#">View Profile</a>
+                                            <a href="/Writer/EditWriter/@x.WriterID">Düzenle</a>
                                         </div>
                                     </div>
                                 </li>
@@ -81,9 +78,5 @@
         </div>
     </div>
     <!-- js -->
-    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/core.js"></script>
-    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/script.min.js"></script>
-    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/process.js"></script>
-    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/layout-settings.js"></script>
 </body>
 
