@@ -31,8 +31,8 @@
                                     <div style="padding-right: 0.8em;">
                                         <i data-feather="users" width="20"></i>
                                     </div>
-                                        <h5 style="color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 100 ">@ViewBag.Count Adet Yazar Mevcut</h5>
-                                        <a style="font-family:monospace;padding-left:36em;color:blue" class=" h5" href="/Writer/AddWriter">Yeni Yazar Girişi</a>
+                                    <h5 style="color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 100 ">@ViewBag.Count Adet Yazar Mevcut</h5>
+                                    <a style="font-family:monospace;padding-left:36em;color:blue" class=" h5" href="/Writer/AddWriter">Yeni Yazar Girişi</a>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,19 @@
                         <ul class="row">
                             @foreach (var x in Model)
                             {
-
+                                string statu = "";
+                                string color = "";
+                                switch (x.WriterStatus)
+                                {
+                                    case true:
+                                        statu = "Aktif Yazar";
+                                        color = "text-primary";
+                                        break;
+                                    case false:
+                                        statu = "Pasif Yazar";
+                                        color = "text-warning";
+                                        break;
+                                }
                                 <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                                     <div style="max-height:450px;" class="contact-directory-box">
                                         <div class="contact-dire-info text-center">
@@ -55,6 +67,7 @@
                                                 <h4>@x.WriterName @x.WriterSurname</h4>
                                                 <p>@x.WriterTel</p>
                                                 <div class="work text-success"><i class="ion-android-mail"></i> @x.WriterMail</div>
+                                                <p class="@color">@statu</p>
                                             </div>
                                             <div class="contact-skill">
                                                 <span class="badge badge-primary "></span>

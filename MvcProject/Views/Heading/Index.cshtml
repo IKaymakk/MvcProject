@@ -52,12 +52,12 @@
                     <td style="text-align:center">@x.HeadingName</td>
                     <td style="text-align:center">@x.HeadingDate</td>
                     <td class="@cname" style="font-weight: 600">@x.Category.CategoryName</td>
-                    <td class="" style="text-align: center; font-weight: bolder">@x.Writer.WriterName</td>
+                    <td class="" style="text-align: center; font-weight: bolder">@x.Writer.WriterName @x.Writer.WriterSurname</td>
                     <td style="text-align:center;width:30%">
                         <div>
                             <a style="padding:0.55em 2em 0.55em 2em" href="" class="btn btn-outline-danger">Sil</a>
                             <a href="" class="btn btn-outline-success">Güncelle</a>
-                            <a class="btn btn-outline-info">İçerik</a>
+                            <a href="/Content/ContentByHeading/@x.HeadingID" class="btn btn-outline-info">İçerik</a>
                         </div>
                     </td>
                 </tr>

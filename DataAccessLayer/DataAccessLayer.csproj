@@ -75,10 +75,29 @@
     <Compile Include="Migrations\202407012043496_mig_WriterNewColumns.designer.cs">
       <DependentUpon>202407012043496_mig_WriterNewColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407022008495_mig_addWriterstatus.cs" />
+    <Compile Include="Migrations\202407022008495_mig_addWriterstatus.designer.cs">
+      <DependentUpon>202407022008495_mig_addWriterstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407022224102_mig_addContentimg.cs" />
+    <Compile Include="Migrations\202407022224102_mig_addContentimg.designer.cs">
+      <DependentUpon>202407022224102_mig_addContentimg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407022229590_mig_addHeadingimg.cs" />
+    <Compile Include="Migrations\202407022229590_mig_addHeadingimg.designer.cs">
+      <DependentUpon>202407022229590_mig_addHeadingimg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407022237406_mig_addContentvalue2-3.cs" />
+    <Compile Include="Migrations\202407022237406_mig_addContentvalue2-3.designer.cs">
+      <DependentUpon>202407022237406_mig_addContentvalue2-3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -94,6 +113,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407012043496_mig_WriterNewColumns.resx">
       <DependentUpon>202407012043496_mig_WriterNewColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407022008495_mig_addWriterstatus.resx">
+      <DependentUpon>202407022008495_mig_addWriterstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407022224102_mig_addContentimg.resx">
+      <DependentUpon>202407022224102_mig_addContentimg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407022229590_mig_addHeadingimg.resx">
+      <DependentUpon>202407022229590_mig_addHeadingimg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407022237406_mig_addContentvalue2-3.resx">
+      <DependentUpon>202407022237406_mig_addContentvalue2-3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

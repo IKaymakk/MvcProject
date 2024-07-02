@@ -15,8 +15,8 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public string HeadingName { get; set; }
         public DateTime HeadingDate { get; set; }
-
-
+        [StringLength(300)]
+        public string HeadingImg { get; set; }
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
         public int WriterID { get; set; }

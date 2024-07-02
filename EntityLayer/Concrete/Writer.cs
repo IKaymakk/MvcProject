@@ -30,6 +30,7 @@ namespace EntityLayer.Concrete
         public string WriterAbout { get; set; }
         [StringLength(20)]
         public string WriterTel { get; set; }
+        public bool WriterStatus { get; set; }
 
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Content> Content { get; set; }
