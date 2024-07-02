@@ -17,12 +17,10 @@
         {
             <div class="form-control">
                 <hr />
-                <div style="display:flex">
                     @Html.Label("Kategori Adı")
                     @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", placeholder = "Boş Bırakılamaz", @style = "max-width:300px;padding:0.7em 1em 0.7em 1em" })
-                </div>
+                    @Html.ValidationMessageFor(x => x.CategoryName)
                 <br />
-                @Html.ValidationMessageFor(x => x.CategoryName)
                 <hr />
                 @Html.Label("Kategori Açıklaması")
                 @Html.TextBoxFor(x => x.CategoryDescription)

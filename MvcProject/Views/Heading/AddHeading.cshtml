@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "AddHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddHeading", "Heading", FormMethod.Post))
+{
+    <div style="padding:0.5em 2em 0em 2em" class="form-group">
+
+        @Html.Label("Başlık Adı")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="align-justify"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.HeadingName)
+        <hr />
+        @Html.Label("Kategorisi")
+        <div class="form-group position-relative has-icon-left">
+            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.ddlc, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="briefcase"></i>
+            </div>
+        </div>
+        <hr />
+        @Html.Label("Yazar")
+    <div class="form-group position-relative has-icon-left">
+        @Html.DropDownListFor(x => x.WriterID, (List<SelectListItem>)ViewBag.ddlw, new { @class = "form-control", @style = "max-width:30%" })
+        <div class="form-control-icon">
+            <i data-feather="user"></i>
+        </div>
+    </div>
+        <hr />
+
+        <button style="padding:0.5em 2em 0.5em 2em" class="btn btn-primary">Kaydet</button>
+    </div>
+}
+

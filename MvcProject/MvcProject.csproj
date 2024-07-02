@@ -138,6 +138,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3917,6 +3918,8 @@
     <Content Include="voler-master\src\assets\scss\_variables.scss" />
     <Content Include="Views\Writer\AddWriter.cshtml" />
     <Content Include="Views\Writer\EditWriter.cshtml" />
+    <Content Include="Views\Heading\Index.cshtml" />
+    <Content Include="Views\Heading\AddHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

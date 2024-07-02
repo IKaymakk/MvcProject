@@ -24,15 +24,15 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
                 <div class="container pd-0">
-                    <div class="page-header" style="background-color: white ">
+                    <div class="page-header" style="background-color: white;max-height:65px ">
                         <div class="row ">
                             <div class="col-md-12 col-sm-11">
-                                <div style="display:flex" class="title">
+                                <div style="display:flex;" class="title">
                                     <div style="padding-right: 0.8em;">
                                         <i data-feather="users" width="20"></i>
                                     </div>
-                                    <h5 style="color:black;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@ViewBag.Count Adet Yazar Mevcut</h5>
-                                    <a style="font-family:monospace;padding-left:36em;color:blue" class=" h5" href="/Writer/AddWriter">Yeni Yazar Girişi</a>
+                                        <h5 style="color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 100 ">@ViewBag.Count Adet Yazar Mevcut</h5>
+                                        <a style="font-family:monospace;padding-left:36em;color:blue" class=" h5" href="/Writer/AddWriter">Yeni Yazar Girişi</a>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             @foreach (var x in Model)
                             {
 
-                                <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12" >
+                                <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                                     <div style="max-height:450px;" class="contact-directory-box">
                                         <div class="contact-dire-info text-center">
                                             <div class="contact-avatar">

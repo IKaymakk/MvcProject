@@ -5,22 +5,15 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <style>
-    .page-header {
-        background-color: #fff;
-        border-radius: 10px;
-        -webkit-box-shadow: 0 0 28px rgba(0,0,0,.08);
-        box-shadow: 0 0 28px rgba(0,0,0,.08);
-        margin-bottom: 30px;
-        padding: 20px
     }
 </style>
 <div style="padding:1em 1.5em 0em 1.5em">
     <div class="page-header" style="background-color:white; width: 100%; height: 60px; display: flex">
         <div style="display:flex">
-            <div style="padding-top: -0em;padding-left:0.3em">
+            <div style="padding-top: -0em;padding-left:0.3em;font-weight:bold">
                 <i style="color:black" data-feather="briefcase" width="20"></i>
             </div>
-            <h5 style="font-weight: 700; color: black; padding-left: 0.5em; padding-top: 0.2em; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">@ViewBag.CategoryCount Adet Kategori Mevcut</h5>
+            <h5 style="color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 100; padding-left: 0.5em; padding-top: 0.1em;">@ViewBag.CategoryCount Adet Kategori Mevcut</h5>
         </div>
     </div>
     <div style="padding-top:0em" class="table-responsive">
@@ -34,11 +27,23 @@
             </tr>
             @foreach (var x in Model)
             {
-                <tr style="color:#808080">
+                bool value = x.CategoryStatus;
+                string color = "";
+                switch (value)
+                {
+
+                    case true:
+                        color = "text-success";
+                        break;
+                    case false:
+                        color = "text-danger";
+                        break;
+                }
+                <tr style="">
                     <th style="text-align:center;padding-top:1.9em">@x.CategoryID</th>
                     <td style="text-align:center">@x.CategoryName</td>
                     <td>@x.CategoryDescription</td>
-                    <td style="text-align:center">@x.CategoryStatus</td>
+                    <td class="@color" style="text-align:center;font-weight:600">@x.CategoryStatus</td>
                     <td style="text-align:center;width:30%">
                         <div>
                             <a style="padding:0.55em 2em 0.55em 2em" href="/AdminCategory/DeleteCategory/@x.CategoryID" class="btn btn-outline-danger">Sil</a>

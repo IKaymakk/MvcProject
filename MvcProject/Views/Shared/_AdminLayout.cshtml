@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="~/voler-master/dist/assets/css/app.css">
     <link rel="shortcut icon" href="~/voler-master/assets/images/favicon.svg" type="image/x-icon">
     <style>
+        body{
+            font-weight:400;
+        }
         .vd {
             color: red;
         }
@@ -28,6 +31,15 @@
             font-weight: bold;
             color: red;
             background-color: azure;
+        }
+
+        .page-header {
+            background-color: #fff;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 0 28px rgba(0,0,0,.08);
+            box-shadow: 0 0 28px rgba(0,0,0,.08);
+            margin-bottom: 30px;
+            padding: 20px;
         }
     </style>
 </head>
@@ -45,7 +57,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="#" class='sidebar-link'>
+                            <a href="/Heading/Index" class='sidebar-link'>
                                 <i data-feather="align-justify" width="20"></i>
                                 <span>Başlıklar</span>
                             </a>
@@ -62,7 +74,7 @@
                                 <span>Grafikler</span>
                             </a>
                         </li>
-                        <li class="sidebar-item active ">
+                        <li class="sidebar-item ">
                             <a href="form-layout.html" class='sidebar-link'>
                                 <i data-feather="info" width="20"></i>
                                 <span>Hakkımızda</span>
