@@ -47,5 +47,9 @@ namespace BusinessLayer.Concrete
         {
             return _contentdal.List(x => x.HeadingID == id);
         }
+        //public List<Comment> GetCommentByContentID(int id)
+        //{
+        //    return _contentdal.List(x => x.ContentID == id);
+        //}
     }
 }

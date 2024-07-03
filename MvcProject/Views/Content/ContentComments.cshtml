@@ -1,0 +1,17 @@
+﻿@using EntityLayer.Concrete
+@model List<Comment>
+@{
+    Layout = null;
+}
+
+<br />
+<h5 class="mb-10">Yorumlar</h5>
+@foreach (var x in Model)
+{
+    <ul>
+        <span class="text-primary">@x.CommentUserName</span>
+        <li>@x.CommentText</li>
+    </ul>
+    <hr />
+}
+

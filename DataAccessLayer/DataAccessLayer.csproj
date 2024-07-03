@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfCommentDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
@@ -90,6 +92,10 @@
     <Compile Include="Migrations\202407022237406_mig_addContentvalue2-3.cs" />
     <Compile Include="Migrations\202407022237406_mig_addContentvalue2-3.designer.cs">
       <DependentUpon>202407022237406_mig_addContentvalue2-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407031034575_addComment.cs" />
+    <Compile Include="Migrations\202407031034575_addComment.designer.cs">
+      <DependentUpon>202407031034575_addComment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407022237406_mig_addContentvalue2-3.resx">
       <DependentUpon>202407022237406_mig_addContentvalue2-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407031034575_addComment.resx">
+      <DependentUpon>202407031034575_addComment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

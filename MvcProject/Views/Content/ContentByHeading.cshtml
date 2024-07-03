@@ -70,17 +70,7 @@
                                             <p>@x.ContentValue2</p>
                                             <p>@x.ContentValue3</p>
 
-                                            @*<h5 class="mb-10">Unordered List</h5>
-                                                <ul>
-                                                    <li>Duis aute irure dolor in reprehenderit in voluptate.</li>
-                                                    <li>Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-                                                    <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                                                    <li>Duis aute irure dolor in reprehenderit in voluptate.</li>
-                                                    <li>Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-                                                    <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                                                </ul>*@
+                                            @Html.Action("ContentComments", "Content")
 
                                         </div>
                                     </div>
@@ -128,7 +118,7 @@
                                                             <span>Aktiflik Durumu</span>
                                                             <span class="@color">@statu</span>
                                                         </li>
-                                                       
+
                                                     </ul>
                                                 </div>
                                                 <div class="profile-social">

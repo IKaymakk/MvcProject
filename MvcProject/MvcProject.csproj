@@ -3923,6 +3923,7 @@
     <Content Include="Views\Heading\AddHeading.cshtml" />
     <Content Include="Views\Content\Index.cshtml" />
     <Content Include="Views\Content\ContentByHeading.cshtml" />
+    <Content Include="Views\Content\ContentComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
