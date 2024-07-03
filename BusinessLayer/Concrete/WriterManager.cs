@@ -47,5 +47,19 @@ namespace BusinessLayer.Concrete
         {
             _writerdal.Update(writer);
         }
+        public void WriterStatus(int id)
+        {
+            Writer w = _writerdal.Get(x => x.WriterID == id);
+            if (w.WriterStatus == false)
+            {
+                w.WriterStatus = true;
+                _writerdal.Update(w);
+            }
+            else
+            {
+                w.WriterStatus = false;
+                _writerdal.Update(w);
+            }
+        }
     }
 }

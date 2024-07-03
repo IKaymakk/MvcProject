@@ -35,7 +35,7 @@ namespace MvcProject.Controllers
             List<SelectListItem> wv = (from x in wm.GetList()
                                        select new SelectListItem
                                        {
-                                           Text = x.WriterName +" "+ x.WriterSurname,
+                                           Text = x.WriterName + " " + x.WriterSurname,
                                            Value = x.WriterID.ToString()
                                        }).ToList();
             ViewBag.ddlw = wv;
@@ -49,6 +49,29 @@ namespace MvcProject.Controllers
             hm.HeadingAdd(p);
             return RedirectToAction("Index");
         }
-        
+        [HttpGet]
+        public ActionResult EditHeading(int id)
+        {
+            List<SelectListItem> cv = (from x in cm.GetList()
+                                       select new SelectListItem
+                                       {
+                                           Text = x.CategoryName,
+                                           Value = x.CategoryID.ToString()
+                                       }).ToList();
+            ViewBag.Category = cv;
+            var value = hm.GetById(id);
+            return View(value);
+        }
+        [HttpPost]
+        public ActionResult EditHeading(Heading heading)
+        {
+            hm.HeadingUpdate(heading);
+            return RedirectToAction("Index");
+        }
+        public ActionResult ChangeStatusHeading(int id)
+        {
+            hm.HeadingChangeStatus(id);
+            return RedirectToAction("Index");
+        }
     }
 }

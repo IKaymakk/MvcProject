@@ -16,13 +16,13 @@
         </div>
     </div>
     <div style="padding-top:0em" class="table-responsive">
-        <table class="table table-hover" style="background-color:white;color:black">
+        <table class="table table-hover" style="background-color:white;color:black;">
             <tr class="table btn-outline-primary" style="text-align:center;">
                 <th>#</th>
                 <th style="min-width:8em;max-width:11em">Başlık</th>
-                <th>Tarihi</th>
-                <th>Kategorisi</th>
-                <th>Yazarı</th>
+                <th>Durum</th>
+                <th>Kategori</th>
+                <th>Yazar</th>
                 <th>Düzenleme</th>
             </tr>
             @foreach (var x in Model)
@@ -45,18 +45,33 @@
                     case "Sağlık":
                         cname = "text-success";
                         break;
-
+                }
+                string statu = "";
+                string color = "";
+                string buton = "";
+                switch (x.HeadingStatus)
+                {
+                    case true:
+                        color = "text-primary";
+                        statu = "Aktif Başlık";
+                        buton = "Pasif Et";
+                        break;
+                    case false:
+                        color = "text-warning";
+                        statu = "Pasif Başlık";
+                        buton = "Aktif Et";
+                        break;
                 }
                 <tr class="text-" style="">
                     <th style="text-align:center;padding-top:1.9em">@x.HeadingID</th>
                     <td style="text-align:center">@x.HeadingName</td>
-                    <td style="text-align:center">@x.HeadingDate</td>
-                    <td class="@cname" style="font-weight: 600">@x.Category.CategoryName</td>
+                    <td style="text-align:center;font-weight:bolder" class="@color">@statu</td>
+                    <td class="@cname">@x.Category.CategoryName</td>
                     <td class="" style="text-align: center; font-weight: bolder">@x.Writer.WriterName @x.Writer.WriterSurname</td>
                     <td style="text-align:center;width:30%">
                         <div>
-                            <a style="padding:0.55em 2em 0.55em 2em" href="" class="btn btn-outline-danger">Sil</a>
-                            <a href="" class="btn btn-outline-success">Güncelle</a>
+                            <a href="/Heading/ChangeStatusHeading/@x.HeadingID" class="btn btn-outline-danger">@buton</a>
+                            <a href="/Heading/EditHeading/@x.HeadingID" class="btn btn-outline-success">Güncelle</a>
                             <a href="/Content/ContentByHeading/@x.HeadingID" class="btn btn-outline-info">İçerik</a>
                         </div>
                     </td>

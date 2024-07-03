@@ -78,9 +78,28 @@
         @Html.ValidationMessageFor(x => x.WriterAbout)
         <hr />
         <button style="padding:0.5em 4em 0.5em 4em" class="btn btn-primary">Kaydet</button>
+
+        @{string cls = "";}
+        @{string txt = "";}
+        @switch (Model.WriterStatus)
+        {
+            case true:
+                cls = "btn btn-primary";
+                txt = "Aktif Yazar";
+                break;
+            case false:
+                cls = "btn btn-warning";
+                txt = "Pasif Yazar";
+                break;
+        }
+
+        <a href="/Writer/ChangeWriterStatus/@Model.WriterID" style="padding:0.5em 3em 0.5em 3em;margin-left:2.3em" class="@cls">
+            @txt
+        </a>
         @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control", @style = "max-width:1%;opacity:0%" })
 
     </div>
 }
+
 
 

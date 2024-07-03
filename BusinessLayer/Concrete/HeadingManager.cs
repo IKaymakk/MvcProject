@@ -32,20 +32,36 @@ namespace BusinessLayer.Concrete
             _headingdal.Insert(heading);
         }
 
-    
+
         public int HeadingCount()
         {
             return _headingdal.Count();
         }
 
-        public void HeadingDelete(Heading heading)
+        public void HeadingChangeStatus(int id)
         {
-            _headingdal.Delete(heading);
+            Heading c = _headingdal.Get(x => x.HeadingID == id);
+            if (c.HeadingStatus == true)
+            {
+                c.HeadingStatus = false;
+                _headingdal.Update(c);
+
+            }
+            else
+            {
+                c.HeadingStatus = true;
+                _headingdal.Update(c);
+            }
         }
 
         public void HeadingUpdate(Heading heading)
         {
             _headingdal.Update(heading);
+        }
+
+        public void HeadingDelete(Heading heading)
+        {
+            throw new NotImplementedException();
         }
     }
 }

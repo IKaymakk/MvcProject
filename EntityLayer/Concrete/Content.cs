@@ -17,6 +17,7 @@ namespace EntityLayer.Concrete
         public string ContentValue2 { get; set; }
         [StringLength(5000)]
         public string ContentValue3 { get; set; }
+        public bool ContentStatus { get; set; }
         public DateTime ContentDate { get; set; }
         [StringLength(300)]
         public string ContentImg1 { get; set; }

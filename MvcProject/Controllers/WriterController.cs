@@ -70,5 +70,10 @@ namespace MvcProject.Controllers
             }
             return View();
         }
+        public ActionResult ChangeWriterStatus(int id)
+        {
+            wm.WriterStatus(id);
+            return RedirectToAction("Index");
+        }
     }
 }
