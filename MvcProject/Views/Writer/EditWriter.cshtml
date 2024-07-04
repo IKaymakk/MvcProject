@@ -84,16 +84,16 @@
         @switch (Model.WriterStatus)
         {
             case true:
-                cls = "btn btn-primary";
-                txt = "Aktif Yazar";
+                cls = "btn btn-warning";
+                txt = "Durumu Pasif Yap";
                 break;
             case false:
-                cls = "btn btn-warning";
-                txt = "Pasif Yazar";
+                cls = "btn btn-success";
+                txt = "Durumu Aktif Yap";
                 break;
         }
 
-        <a href="/Writer/ChangeWriterStatus/@Model.WriterID" style="padding:0.5em 3em 0.5em 3em;margin-left:2.3em" class="@cls">
+        <a href="/Writer/ChangeWriterStatus/@Model.WriterID" style="padding:0.5em 2em 0.5em 2em;margin-left:2.3em" class="@cls">
             @txt
         </a>
         @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control", @style = "max-width:1%;opacity:0%" })

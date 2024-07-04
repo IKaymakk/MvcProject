@@ -26,6 +26,7 @@ namespace DataAccessLayer.Concrete.Repositories
             return _object.Count();
         }
 
+
         public void Delete(T p)
         {
             var deletedEntity = context.Entry(p);

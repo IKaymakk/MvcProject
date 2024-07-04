@@ -1,23 +1,9 @@
 ﻿@using EntityLayer.Concrete
-@model List<Contact>
+@model List<Message>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-@{
-
-    ViewBag.Title = "SendBox";
-
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-
-}
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-<!DOCTYPE html>
 
 <html>
 
@@ -61,7 +47,7 @@
 
                     <div class="card-header">
 
-                        <h3 class="card-title text-primary">İletişim Mesajları</h3>
+                        <h3 class="card-title text-primary">Gelen Mesajlar</h3>
 
                         <div class="card-tools">
 
@@ -117,7 +103,7 @@
 
                             <div class="float-right">
 
-                                1-50/200
+                              
 
                                 <div class="btn-group">
 
@@ -148,28 +134,28 @@
 
                                             <td class="mailbox-star"><a href="#"><i data-feather="mail" class="text-primary"></i></a></td>
 
-                                            <td class="mailbox-name font-weight-bolder text-warning"><a href="/Contact/GetContactDetails/@x.ContactID">@x.Username</a></td>
+                                            <td class="mailbox-name font-weight-bolder text-warning"><a href="/Message/GetMessageDetails/@x.MessageID">@x.SenderMail</a></td>
 
                                             <td style="width:50%;padding-left:4em" class="mailbox-subject">
 
-                                                <b>@x.Subject - </b>
+                                                <b>@x.MessageSubject -</b>
 
-                                                @if (x.Message.Length > 75)
+                                                @if (x.MessageContent.Length > 75)
                                                 {
-                                                    <a style="color:#656565" href="/Contact/GetContactDetails/@x.ContactID">
-                                                        @x.Message.Substring(0, 75)...
+                                                    <a style="color:#656565" href="/Message/GetMessageDetails/@x.MessageID">
+                                                        @x.MessageContent.Substring(0, 75)...
                                                     </a>
 
                                                 }
                                                 else
                                                 {
-                                                    @x.Message
+                                                    @x.MessageContent
                                                 }
 
 
                                             <td class="mailbox-attachment"></td>
 
-                                            <td style="width:1%" class="mailbox-date">@x.Date.ToShortDateString()</td>
+                                            <td style="width:1%" class="mailbox-date">@x.MessageDate.ToShortDateString()</td>
 
                                         </tr>
                                     }
@@ -344,4 +330,3 @@
 </body>
 
 </html>
-
