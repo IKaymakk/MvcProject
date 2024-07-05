@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Yazar</title>
     <link rel="stylesheet" href="~/voler-master/dist/assets/css/bootstrap.css">
     <link rel="stylesheet" href="~/voler-master/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="~/voler-master/dist/assets/css/app.css">
@@ -57,73 +57,37 @@
                 <div class="sidebar-menu">
                     <ul style="margin-top:0.2em" class="menu">
                         <li class='sidebar-title'>Admin Menu</li>
-                        @if (User.IsInRole("A"))
-                        {
-                            <li class="sidebar-item  ">
-                                <a href="/AdminCategory/Index" class='sidebar-link'>
-                                    <i data-feather="briefcase" width="20"></i>
-                                    <span>Kategoriler</span>
-                                </a>
-                            </li>
-                        }
-                        <li class="sidebar-item ">
-                            <a href="/Heading/Index" class='sidebar-link'>
+                        <li class="sidebar-item  ">
+                            <a href="/AdminCategory/Index" class='sidebar-link'>
+                                <i data-feather="user" width="20"></i>
+                                <span>Profilim</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="/WriterPanel/MyHeadings" class='sidebar-link'>
                                 <i data-feather="align-justify" width="20"></i>
-                                <span>Başlıklar</span>
+                                <span>Başlıklarım</span>
                             </a>
                         </li>
                         <li class="sidebar-item  ">
-                            <a href="/Writer/Index" class='sidebar-link'>
-                                <i data-feather="users" width="20"></i>
-                                <span>Yazarlar</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item has-sub ">
-                            <a href="#" class='sidebar-link'>
-                                <i data-feather="bar-chart-2" width="20"></i>
-                                <span>Grafikler</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item ">
-                            <a href="form-layout.html" class='sidebar-link'>
-                                <i data-feather="info" width="20"></i>
-                                <span>Hakkımızda</span>
+                            <a href="" class='sidebar-link'>
+                                <i data-feather="briefcase" width="20"></i>
+                                <span>Kategoriler</span>
                             </a>
                         </li>
                         <li class="sidebar-item  ">
-                            <a href="/Contact/Index" class='sidebar-link'>
+                            <a href="" class='sidebar-link'>
                                 <i data-feather="mail" width="20"></i>
-                                <span>İletişim & Mesajlarım</span>
+                                <span>Mesajlar</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  ">
-                            <a href="table-datatable.html" class='sidebar-link'>
-                                <i data-feather="edit" width="20"></i>
-                                <span>Yazılar</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="table-datatable.html" class='sidebar-link'>
-                                <i data-feather="activity" width="20"></i>
-                                <span>Yetkilendirme</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="/Gallery/Index" class='sidebar-link'>
-                                <i data-feather="book-open" width="20"></i>
-                                <span>Galeri</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="table-datatable.html" class='sidebar-link'>
-                                <i data-feather="alert-triangle" width="20"></i>
-                                <span>Hata Sayfaları</span>
-                            </a>
-                        </li>
+                    
                         <li class="sidebar-item">
                             <a href="table-datatable.html" class='sidebar-link'>
                                 <i data-feather="log-out" width="20"></i>
                                 <p class='sidebar-title'>Çıkış Yap</p>
+                                <i data-feather="log-out" width="20"></i>
+                                <p class='sidebar-title'>Siteye Git</p>
                             </a>
                         </li>
 

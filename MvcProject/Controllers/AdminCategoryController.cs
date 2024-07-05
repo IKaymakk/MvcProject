@@ -16,6 +16,7 @@ namespace MvcProject.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        [Authorize(Roles="A")]
         public ActionResult Index()
         {
             int categoryCount = cm.GetCategoryCount();
