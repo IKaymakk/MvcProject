@@ -142,6 +142,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -2005,6 +2006,17 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="MasterTheme\BG1\Deep-Blue-Sand-Dunes-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\Deep-Yellow-Desert-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\Deep-Yellow-Sand-Desert-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\Desert-Sand-Dunes-At-Night-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\milky-way-scene-snowscape-generative-ai.jpg" />
+    <Content Include="MasterTheme\BG1\Sand-Dunes-By-Night-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\snowy-mountain-peak-starry-galaxy-majesty-generative-ai.jpg" />
+    <Content Include="MasterTheme\BG1\Sunrise-Over-Planet-Earth-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\Turquoise-Sea-Meets-Sky-Wide-Angle-AI-Generated-4K-Wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\wallpaperflare.com_wallpaper.jpg" />
+    <Content Include="MasterTheme\BG1\Windows-11-Abstract-Purple-Gradient-Bloom-4K-Wallpaper.jpg" />
     <Content Include="MasterTheme\colorlib-error-404-10\css\style.css" />
     <Content Include="MasterTheme\colorlib-error-404-10\img\bg.jpg" />
     <Content Include="MasterTheme\colorlib-error-404-10\index.html" />
@@ -3944,6 +3956,7 @@
     <Content Include="Views\Message\GetMessageDetails.cshtml" />
     <Content Include="Views\Contact\ContactTrashBox.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

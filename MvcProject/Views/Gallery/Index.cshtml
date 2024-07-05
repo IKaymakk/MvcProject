@@ -1,0 +1,64 @@
+﻿@using EntityLayer.Concrete
+@model List<ImageFile>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/MasterTheme/deskapp2-master/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/MasterTheme/deskapp2-master/vendors/styles/style.css">
+</head>
+<body>
+    <div class="mobile-menu-overlay"></div>
+    <div style="padding:0.5em 2em 0em 2em" class="main-container">
+        <div class="pd-ltr-20 xs-pd-20-10">
+            <div class="min-height-200px">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="title">
+                                <h4 style="text-align:center">Galeri</h4>
+                            </div>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-wrap">
+                    <ul class="row">
+                        @foreach (var x in Model)
+                        {
+                            <li class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="da-card box-shadow">
+                                    <div class="da-card-photo">
+                                        <img src="@x.ImagePath" alt="@x.ImageName">
+                                        <div class="da-overlay">
+                                            <div class="da-social">
+                                                <h4 class="mb-10 color-white pd-20">@x.ImageName</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendors/scripts/core.js"></script>
+    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/script.min.js"></script>
+    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/process.js"></script>
+    <script src="~/MasterTheme/deskapp2-master/vendors/scripts/layout-settings.js"></script>
+    <script src="~/MasterTheme/deskapp2-master/src/plugins/fancybox/dist/jquery.fancybox.js"></script>
+</body>
+</html>
+
