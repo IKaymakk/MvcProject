@@ -16,6 +16,7 @@ namespace DataAccessLayer.Abstract
         T Get(Expression<Func<T, bool>> filter);
         List<T> List(Expression<Func<T, bool>> filter);
         int Count();
+        int Count(Expression<Func<T, bool>> filter);
 
     }
 }

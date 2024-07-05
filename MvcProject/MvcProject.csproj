@@ -141,6 +141,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -2004,6 +2005,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="MasterTheme\colorlib-error-404-10\css\style.css" />
+    <Content Include="MasterTheme\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="MasterTheme\colorlib-error-404-10\index.html" />
+    <Content Include="MasterTheme\colorlib-error-404-10\readme.txt" />
     <Content Include="MasterTheme\deskapp2-master\400.html" />
     <Content Include="MasterTheme\deskapp2-master\403.html" />
     <Content Include="MasterTheme\deskapp2-master\404.html" />
@@ -2937,6 +2942,7 @@
     <Content Include="MasterTheme\deskapp2-master\vendors\fonts\themify.eot" />
     <Content Include="MasterTheme\deskapp2-master\vendors\fonts\themify.ttf" />
     <Content Include="MasterTheme\deskapp2-master\vendors\fonts\themify.woff" />
+    <Content Include="MasterTheme\colorlib-error-404-10.zip" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3936,6 +3942,8 @@
     <Content Include="Views\Message\SendBox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Message\GetMessageDetails.cshtml" />
+    <Content Include="Views\Contact\ContactTrashBox.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

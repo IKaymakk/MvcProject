@@ -115,6 +115,10 @@
     <Compile Include="Migrations\202407042238131_mig_dateContact.designer.cs">
       <DependentUpon>202407042238131_mig_dateContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407051130161_mig_msgStatus.cs" />
+    <Compile Include="Migrations\202407051130161_mig_msgStatus.designer.cs">
+      <DependentUpon>202407051130161_mig_msgStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -164,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407042238131_mig_dateContact.resx">
       <DependentUpon>202407042238131_mig_dateContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407051130161_mig_msgStatus.resx">
+      <DependentUpon>202407051130161_mig_msgStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -1,21 +1,9 @@
 ﻿@using EntityLayer.Concrete
 @model List<Contact>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ContactTrashBox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-@{
-
-    ViewBag.Title = "SendBox";
-
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-
-}
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 
 <!DOCTYPE html>
 
@@ -146,7 +134,7 @@
                                         <tr>
 
 
-                                            <td class=""><a href="/Contact/ContactChangeStatu/@x.ContactID"><i data-feather="delete" class="text-danger"></i></a></td>
+                                            <td class=""><a href="/Contact/ContactChangeStatuTrash/@x.ContactID"><i data-feather="plus" class="text-success"></i></a></td>
 
                                             <td class="mailbox-name font-weight-bolder text-warning"><a href="/Contact/GetContactDetails/@x.ContactID">@x.Username</a></td>
 
@@ -344,4 +332,5 @@
 </body>
 
 </html>
+
 

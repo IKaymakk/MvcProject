@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace MvcProject.Controllers
         MessageManager mm = new MessageManager(new EfMessageDal());
         ContactManager cm = new ContactManager(new EfContactDal());
         ContactValidator cv = new ContactValidator();
+        Context ctx = new Context();
         public ActionResult Index()
         {
             var values = cm.GetList();
@@ -27,11 +29,31 @@ namespace MvcProject.Controllers
         }
         public PartialViewResult MessageListMenu()
         {
+            var sayi3 = mm.GetMessageCount();
+            ViewBag.Count4 = sayi3;
+            var sayi = cm.GetTrashBoxCount();
+            ViewBag.Count3 = sayi;
             var sayı2 = mm.GetMessageCount();
             var sayı = cm.GetContactCount();
             ViewBag.Count = sayı;
             ViewBag.Count2 = sayı2;
             return PartialView();
+        }
+        public ActionResult ContactChangeStatu(int id)
+        {
+            cm.ContactStatu(id);
+            return RedirectToAction("Index");
+        }
+        public ActionResult ContactChangeStatuTrash(int id)
+        {
+            cm.ContactStatu(id);
+            return RedirectToAction("ContactTrashBox");
+        }
+        public ActionResult ContactTrashBox()
+        {
+         
+            var value = cm.GetLTrashist();
+            return View(value);
         }
     }
 }

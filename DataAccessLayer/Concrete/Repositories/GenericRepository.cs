@@ -26,6 +26,10 @@ namespace DataAccessLayer.Concrete.Repositories
             return _object.Count();
         }
 
+        public int Count(Expression<Func<T, bool>> filter)
+        {
+            return _object.Where(filter).Count();
+        }
 
         public void Delete(T p)
         {
