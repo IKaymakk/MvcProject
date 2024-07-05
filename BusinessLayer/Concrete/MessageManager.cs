@@ -21,12 +21,12 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetList()
         {
-            return _messagedal.List(x => x.ReceiverMail == "admin@gmail.com").OrderByDescending(x => x.MessageDate).ToList(); ;
+            return _messagedal.List(x => x.ReceiverMail == "bd@gmail.com").OrderByDescending(x => x.MessageDate).ToList(); ;
         }
 
         public List<Message> GetListSendBox()
         {
-            return _messagedal.List(x => x.SenderMail == "admin@gmail.com").OrderByDescending(x => x.MessageDate).ToList();
+            return _messagedal.List(x => x.SenderMail == "bd@gmail.com").OrderByDescending(x => x.MessageDate).ToList();
         }
 
         public Message GetMessage(int id)

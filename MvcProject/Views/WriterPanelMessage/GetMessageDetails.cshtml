@@ -1,0 +1,142 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewBag.Title = "GetMessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<html>
+
+<body style="padding:1em 3em 0em 3em" class="hold-transition sidebar-mini">
+
+
+
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+    </section>
+
+    <!-- Main content -->
+
+    <section class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                @Html.Action("MessageListMenu", "WriterPanelMessage")
+
+                <!-- /.col -->
+
+                <div class="col-md-9">
+
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-header" style="background-color:#e7e7e7">
+
+                            <h3 class="card-title" style="font-weight:bolder">@Model.MessageSubject</h3>
+
+
+                        </div>
+                        <br />
+                        <!-- /.card-header -->
+
+                        <div class="card-body p-0">
+
+                            <div style="padding-left:2em" class="mailbox-read-info">
+
+
+
+                                <h5 class="text-bold">@Model.SenderMail</h5>
+
+                                <h6 class="text-primary">
+                                    @Model.ReceiverMail
+                                    <span class="mailbox-read-time "> / @Model.MessageDate.ToShortDateString()</span>
+                                </h6>
+                            </div>
+
+                            <!-- /.mailbox-read-info -->
+
+                            <div class="mailbox-controls with-border text-center">
+
+                                <div class="btn-group">
+
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+
+                                        <i class="far fa-trash-alt"></i>
+
+                                    </button>
+
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+
+                                        <i class="fas fa-reply"></i>
+
+                                    </button>
+
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
+
+                                        <i class="fas fa-share"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <!-- /.btn-group -->
+
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+
+                                    <i class="fas fa-print"></i>
+
+                                </button>
+
+                            </div>
+
+                            <!-- /.mailbox-controls -->
+
+                            <div style="padding-left:2em" class="mailbox-read-message">
+                                <p>@Model.MessageContent</p>
+                            </div>
+
+                            <!-- /.mailbox-read-message -->
+                        </div>
+
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+
+                            <div class="float-right">
+
+                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Yanıtla</button>
+
+                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+
+                            </div>
+
+                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+
+                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+
+                        </div>
+
+                        <!-- /.card-footer -->
+
+                    </div>
+
+                    <!-- /.card -->
+
+                </div>
+
+                <!-- /.col -->
+
+            </div>
+
+            <!-- /.row -->
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+
+

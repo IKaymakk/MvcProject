@@ -45,6 +45,7 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading p)
         {
+            p.HeadingStatus = true;
             p.HeadingDate = DateTime.Now;
             hm.HeadingAdd(p);
             return RedirectToAction("Index");

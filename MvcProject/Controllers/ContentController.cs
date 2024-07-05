@@ -21,6 +21,11 @@ namespace MvcProject.Controllers
             var values = cm.GetlistByHeadingID(id);
             return View(values);
         }
+        public ActionResult ContentByWriter(int id)
+        {
+            var values = cm.GetlistByHeadingID(id);
+            return View(values);
+        }
         public PartialViewResult ContentComments(int id)
         {
             var comments = com.CommentListByHeadingID(id);
