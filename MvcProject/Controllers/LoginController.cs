@@ -9,9 +9,11 @@ using System.Web.Security;
 
 namespace MvcProject.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -54,6 +56,12 @@ namespace MvcProject.Controllers
             {
                 return RedirectToAction("WriterLogin");
             }
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
 
     }

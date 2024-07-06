@@ -13,24 +13,33 @@ namespace MvcProject.Controllers
 {
     public class WriterPanelController : Controller
     {
+        int writeridinfo;
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        IContentManager ıcm = new IContentManager(new EfContentDal());
+        Context c = new Context();
+        int id;
+
+
         public ActionResult WriterProfile()
         {
             return View();
         }
         public ActionResult MyHeadings(string p)
         {
-            Context c = new Context();
+            var count = hm.HeadingCount();
+            ViewBag.Count = count;
             p = (string)Session["WriterMail"];
-            var writeridinfo=c.Writers.Where(x=>x.WriterMail==p).Select(y=>y.WriterID).FirstOrDefault();
+            writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
             var values = hm.GetlistByWriter(writeridinfo);
             return View(values);
         }
-       
+
         [HttpGet]
         public ActionResult NewHeading()
         {
+
+
             List<SelectListItem> ctg = (from x in cm.GetList()
                                         select new SelectListItem
                                         {
@@ -40,12 +49,16 @@ namespace MvcProject.Controllers
             ViewBag.ctg = ctg;
             return View();
         }
+
         [HttpPost]
         public ActionResult NewHeading(Heading p)
         {
+            string writermailinfo = (string)Session["WriterMail"];
+            var writeridinfo = c.Writers.Where(x => x.WriterMail == writermailinfo).Select(y => y.WriterID).FirstOrDefault();
+            ViewBag.d = writeridinfo;
             p.HeadingStatus = true;
             p.HeadingDate = DateTime.Now;
-            p.WriterID = 4;
+            p.WriterID = writeridinfo;
             hm.HeadingAdd(p);
             return RedirectToAction("MyHeadings");
         }
@@ -72,6 +85,34 @@ namespace MvcProject.Controllers
         {
             hm.HeadingChangeStatus(id);
             return RedirectToAction("MyHeadings");
+        }
+        public ActionResult AllHeadings()
+        {
+            var count = hm.HeadingCount();
+            ViewBag.Count = count;
+            var values = hm.Getlist();
+            return View(values);
+        }
+        [HttpGet]
+        public ActionResult AddContent(int id)
+        {
+            ViewBag.d = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddContent(Content p)
+        {
+            string writermailinfo = (string)Session["WriterMail"];
+            var writeridinfo = c.Writers.Where(x => x.WriterMail == writermailinfo).Select(y => y.WriterID).FirstOrDefault();
+            p.WriterID = writeridinfo;
+            p.ContentDate = DateTime.Now;
+            p.ContentStatus = true;
+            ıcm.ContentAdd(p);
+            return RedirectToAction("MyHeadings");
+        }
+        public ActionResult ToDoList()
+        {
+            return View();
         }
     }
 }

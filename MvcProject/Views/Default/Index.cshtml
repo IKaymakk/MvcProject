@@ -1,10 +1,5 @@
 ﻿@using EntityLayer.Concrete
 @model List<Content>
-@{
-    ViewBag.Title = "ContentByWriter";
-    Layout = "~/Views/Shared/_WriterLayout.cshtml";
-}
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -64,7 +59,7 @@
                                         </div>
 
                                         <div class="blog-caption">
-                                            <h4 class="mb-10">@x.Writer.WriterName</h4>
+                                            <h4 class="mb-10">@x.Heading.HeadingName</h4>
                                             <p>@x.ContentValue</p>
                                             <p>@x.ContentValue2</p>
                                             <p>@x.ContentValue3</p>
@@ -98,26 +93,13 @@
                                                 </div>
                                                 <br />
                                                 <br />
+                                                <br />
                                                 <div class="profile-info">
+                                                    <br />
                                                     <h5 class="text-center h5 mb-0">@x.Writer.WriterName @x.Writer.WriterSurname</h5>
                                                     <br />
                                                     <p class="text-center text-muted font-14">@x.Writer.WriterAbout</p>
                                                     <br />
-                                                    <ul>
-                                                        <li>
-                                                            <span>E-Mail Adresi</span>
-                                                            @x.Writer.WriterMail
-                                                        </li>
-                                                        <li>
-                                                            <span>Telefon Numarası</span>
-                                                            @x.Writer.WriterTel
-                                                        </li>
-                                                        <li>
-                                                            <span>Aktiflik Durumu</span>
-                                                            <span class="@color">@statu</span>
-                                                        </li>
-
-                                                    </ul>
                                                 </div>
                                                 <div class="profile-social">
                                                     <h5 class="mb-20 h5 text-blue">Sosyal Medya</h5>
@@ -159,7 +141,7 @@
                 </div>
             </div>
         }
-        @Html.Action("ContentComments", "Content")
+
 
     </div>
     <!-- js -->
@@ -168,5 +150,3 @@
     <script src="~/MasterTheme/deskapp2-master/vendors/scripts/process.js"></script>
     <script src="~/MasterTheme/deskapp2-master/vendors/scripts/layout-settings.js"></script>
 </body>
-
-

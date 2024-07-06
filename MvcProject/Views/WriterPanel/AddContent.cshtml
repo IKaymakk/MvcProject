@@ -1,0 +1,70 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    ViewBag.Title = "AddContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddContent", "WriterPanel", FormMethod.Post))
+{
+    <input type="hidden" name="HeadingID" value="@ViewBag.d" />
+    <div style="padding:0.5em 2em 0em 2em" class="form-group">
+        @Html.Label(" İçerik Alanı 1")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.ContentValue, 2, 5, new { @class = "form-control", @style = "max-width:60%" })
+            <div class="form-control-icon">
+                <i data-feather="align-justify"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.ContentValue)
+        <hr />
+        @Html.Label("İçerik Alanı 2")
+
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.ContentValue2, 2, 4, new { @class = "form-control", @style = "max-width:50%" })
+            <div class="form-control-icon">
+                <i data-feather="briefcase"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.ContentValue2)
+        <hr />
+
+        @Html.Label("İçerik Alanı 3 ")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.ContentValue3, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="user"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.ContentValue3)
+        <hr />
+
+        @Html.Label("Resim Alanı 1 ")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.ContentImg1, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="user"></i>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.ContentValue3)
+        <hr />
+        @Html.Label("Resim Alanı 2 ")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.ContentImg2, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="user"></i>
+            </div>
+        </div>
+        <hr />
+        @Html.Label("Resim Alanı 3 ")
+        <div class="form-group position-relative has-icon-left">
+            @Html.TextAreaFor(x => x.ContentImg3, new { @class = "form-control", @style = "max-width:30%" })
+            <div class="form-control-icon">
+                <i data-feather="user"></i>
+            </div>
+        </div>
+        <hr />
+        <button style="padding:0.5em 2em 0.5em 2em" class="btn btn-primary">İçeriği Ekle</button>
+    </div>
+}
+
+

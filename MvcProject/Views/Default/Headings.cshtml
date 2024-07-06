@@ -1,4 +1,6 @@
-﻿@{
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+@{
     Layout = null;
 
 
@@ -10,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yazar</title>
+    <title>Başlıklar</title>
     <link rel="stylesheet" href="~/voler-master/dist/assets/css/bootstrap.css">
     <link rel="stylesheet" href="~/voler-master/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="~/voler-master/dist/assets/css/app.css">
@@ -56,47 +58,19 @@
             <div class="sidebar-wrapper active">
                 <div class="sidebar-menu">
                     <ul style="margin-top:0.2em" class="menu">
-                        <li class='sidebar-title'>Admin Menu</li>
-                        <li class="sidebar-item  ">
-                            <a href="/AdminCategory/Index" class='sidebar-link'>
-                                <i data-feather="user" width="20"></i>
-                                <span>Profilim</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="/WriterPanel/AllHeadings" class='sidebar-link'>
-                                <i data-feather="align-justify" width="20"></i>
-                                <span>Tüm Başlıklar</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="/WriterPanel/MyHeadings" class='sidebar-link'>
-                                <i data-feather="activity" width="20"></i>
-                                <span>Başlıklarım</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="" class='sidebar-link'>
-                                <i data-feather="briefcase" width="20"></i>
-                                <span>Kategoriler</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="/WriterPanelMessage/Inbox" class='sidebar-link'>
-                                <i data-feather="mail" width="20"></i>
-                                <span>Mesajlar</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a href="/Default/Headings" class='sidebar-link'>
-                                <i data-feather="log-out" width="20"></i>
-                                <p class='sidebar-title'>Çıkış Yap</p>
-                                <i data-feather="log-out" width="20"></i>
-                                <p class='sidebar-title'>Siteye Git</p>
-                            </a>
-                        </li>
-
+                        <a href="/Login/WriterLogin">
+                        <li class='sidebar-title'>Yazar Paneli</li>
+                        </a>
+                        <li class='sidebar-title'>Başlıklar</li>
+                        @foreach (var x in Model)
+                        {
+                            <li class="sidebar-item  ">
+                                <a href="/Default/Headings/@x.HeadingID" class='sidebar-link'>
+                                    <i data-feather="circle" style="max-width:10px;min-width:10px"></i>
+                                    <span>@x.HeadingName</span>
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -104,7 +78,9 @@
         </div>
         <div id="main">
             <div>
-                @RenderBody()
+                @*@RenderBody()
+                  *@
+                @Html.Action("Index","Default")
             </div>
         </div>
     </div>
@@ -114,4 +90,5 @@
     <script src="~/voler-master/dist/assets/js/main.js"></script>
 </body>
 </html>
+
 
