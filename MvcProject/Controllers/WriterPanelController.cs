@@ -8,6 +8,10 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace MvcProject.Controllers
 {
@@ -17,21 +21,45 @@ namespace MvcProject.Controllers
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         IContentManager ıcm = new IContentManager(new EfContentDal());
+        WriterManager wm = new WriterManager(new EfWriterDal());
+        WriterValidator writervalidator = new WriterValidator();
         Context c = new Context();
-        int id;
 
-
-        public ActionResult WriterProfile()
+        [HttpGet]
+        public ActionResult WriterProfile(int id=0)
         {
+           
+            string p = (string)Session["WriterMail"];
+            id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var value = wm.GetById(id);
+            return View(value);
+        }
+        [HttpPost]
+        public ActionResult WriterProfile(Writer p)
+        {
+            ValidationResult result = writervalidator.Validate(p);
+            if (result.IsValid)
+            {
+                wm.WriterUpdate(p);
+
+                return RedirectToAction("AllHeadings");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
-        public ActionResult MyHeadings(string p)
+        public ActionResult MyHeadings(string p, int page = 1)
         {
             var count = hm.HeadingCount();
             ViewBag.Count = count;
             p = (string)Session["WriterMail"];
             writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
-            var values = hm.GetlistByWriter(writeridinfo);
+            var values = hm.GetlistByWriter(writeridinfo).ToPagedList(page, 5);
             return View(values);
         }
 
@@ -86,11 +114,11 @@ namespace MvcProject.Controllers
             hm.HeadingChangeStatus(id);
             return RedirectToAction("MyHeadings");
         }
-        public ActionResult AllHeadings()
+        public ActionResult AllHeadings(int p = 1)
         {
             var count = hm.HeadingCount();
             ViewBag.Count = count;
-            var values = hm.Getlist();
+            var values = hm.Getlist().ToPagedList(p, 5);
             return View(values);
         }
         [HttpGet]
@@ -109,10 +137,6 @@ namespace MvcProject.Controllers
             p.ContentStatus = true;
             ıcm.ContentAdd(p);
             return RedirectToAction("MyHeadings");
-        }
-        public ActionResult ToDoList()
-        {
-            return View();
         }
     }
 }

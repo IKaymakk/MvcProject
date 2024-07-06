@@ -19,14 +19,14 @@ namespace BusinessLayer.Concrete
             _messagedal = messagedal;
         }
 
-        public List<Message> GetList()
+        public List<Message> GetList(string p)
         {
-            return _messagedal.List(x => x.ReceiverMail == "bd@gmail.com").OrderByDescending(x => x.MessageDate).ToList(); ;
+            return _messagedal.List(x => x.ReceiverMail == p).OrderByDescending(x => x.MessageDate).ToList(); ;
         }
 
-        public List<Message> GetListSendBox()
+        public List<Message> GetListSendBox(string p)
         {
-            return _messagedal.List(x => x.SenderMail == "bd@gmail.com").OrderByDescending(x => x.MessageDate).ToList();
+            return _messagedal.List(x => x.SenderMail == p).OrderByDescending(x => x.MessageDate).ToList();
         }
 
         public Message GetMessage(int id)
@@ -36,7 +36,7 @@ namespace BusinessLayer.Concrete
 
         public int GetMessageCount()
         {
-            return _messagedal.Count(x=>x.ReceiverMail=="admin@gmail.com");
+            return _messagedal.Count(x => x.ReceiverMail == "admin@gmail.com");
         }
 
         public void MessageAdd(Message message)

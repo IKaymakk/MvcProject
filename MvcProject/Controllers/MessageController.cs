@@ -15,14 +15,14 @@ namespace MvcProject.Controllers
     {
         MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator mv = new MessageValidator();
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
-            var messagelist = mm.GetList();
+            var messagelist = mm.GetList(p);
             return View(messagelist);
         }
-        public ActionResult SendBox()
+        public ActionResult SendBox(string p)
         {
-            var messagelist = mm.GetListSendBox();
+            var messagelist = mm.GetListSendBox(p);
             return View(messagelist);
         }
         [HttpGet]

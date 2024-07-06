@@ -1,5 +1,7 @@
-﻿@using EntityLayer.Concrete
-@model List<Heading>
+﻿@using PagedList
+@using PagedList.Mvc
+@using EntityLayer.Concrete
+@model PagedList.IPagedList<Heading>
 
 @{
     ViewBag.Title = "Index";
@@ -84,3 +86,4 @@
     </div>
 
 </div>
+@Html.PagedListPager((IPagedList)Model, p => Url.Action("Index", new { p }))

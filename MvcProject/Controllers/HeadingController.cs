@@ -8,7 +8,8 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
-
+using PagedList;
+using PagedList.Mvc;
 namespace MvcProject.Controllers
 {
     public class HeadingController : Controller
@@ -16,11 +17,11 @@ namespace MvcProject.Controllers
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         WriterManager wm = new WriterManager(new EfWriterDal());
-        public ActionResult Index()
+        public ActionResult Index(int p=1)
         {
             var count = hm.HeadingCount();
             ViewBag.HeadingCount = count;
-            var values = hm.Getlist();
+            var values = hm.Getlist().ToPagedList(p,5);
             return View(values);
         }
         [HttpGet]

@@ -1,5 +1,7 @@
-﻿@using EntityLayer.Concrete
-@model List<Heading>
+﻿@using PagedList
+@using PagedList.Mvc
+@using EntityLayer.Concrete
+@model PagedList.IPagedList<Heading>
 @{
     ViewBag.Title = "MyHeadings";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
@@ -86,3 +88,4 @@
 
 </div>
 
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("MyHeadings", new { page }))

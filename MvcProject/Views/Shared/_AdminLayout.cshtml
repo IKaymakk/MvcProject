@@ -48,7 +48,45 @@
             margin-bottom: 30px;
             padding: 20px;
         }
+        .pagination {
+            margin-bottom: 5em;
+            text-align: center !important;
+            display: block;
+        }
+
+            .pagination li {
+                margin-right: 2px;
+                margin-bottom: 3px;
+                display: inline-block;
+            }
+
+                .pagination li a {
+                    border-radius: 50% !important;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0;
+                    margin: 0;
+                    display: inline-block;
+                    text-align: center;
+                }
+
+                    .pagination li a:focus, .pagination li a:active {
+                        -webkit-box-shadow: none !important;
+                        box-shadow: none !important;
+                    }
+
+                    .pagination li a:hover {
+                        background: #2f89fc;
+                        color: #fff;
+                        border: 1px solid transparent;
+                    }
+
+                .pagination li.active a {
+                    border: 1px solid transparent !important;
+                }
     </style>
+
 </head>
 <body>
     <div id="app">
@@ -84,12 +122,12 @@
                                 <span>Grafikler</span>
                             </a>
                         </li>
-                        <li class="sidebar-item ">
+                        @*<li class="sidebar-item ">
                             <a href="form-layout.html" class='sidebar-link'>
                                 <i data-feather="info" width="20"></i>
                                 <span>Hakkımızda</span>
                             </a>
-                        </li>
+                        </li>*@
                         <li class="sidebar-item  ">
                             <a href="/Contact/Index" class='sidebar-link'>
                                 <i data-feather="mail" width="20"></i>
@@ -121,7 +159,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="table-datatable.html" class='sidebar-link'>
+                            <a href="/Login/LogOut" class='sidebar-link'>
                                 <i data-feather="log-out" width="20"></i>
                                 <p class='sidebar-title'>Çıkış Yap</p>
                             </a>
