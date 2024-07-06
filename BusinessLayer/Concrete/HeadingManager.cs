@@ -64,9 +64,9 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Heading> GetlistByWriter()
+        public List<Heading> GetlistByWriter(int id)
         {
-            return _headingdal.List(x => x.WriterID == 4);
+            return _headingdal.List(x => x.WriterID == id);
         }
     }
 }

@@ -47,6 +47,11 @@ namespace BusinessLayer.Concrete
         {
             return _contentdal.List(x => x.HeadingID == id);
         }
+
+        public List<Content> GetListByWriter(int id)
+        {
+            throw new NotImplementedException();
+        }
         //public List<Comment> GetCommentByContentID(int id)
         //{
         //    return _contentdal.List(x => x.ContentID == id);

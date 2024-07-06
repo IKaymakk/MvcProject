@@ -25,7 +25,7 @@ namespace MvcProject.Controllers
             if (userinfo != null)
             {
                 FormsAuthentication.SetAuthCookie(userinfo.AdminName, false);
-                Session["AdminName"]=userinfo.AdminName;
+                Session["AdminName"] = userinfo.AdminName;
                 return RedirectToAction("Index", "AdminCategory");
             }
             else
@@ -33,5 +33,28 @@ namespace MvcProject.Controllers
                 return RedirectToAction("Index");
             }
         }
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult WriterLogin(Writer p)
+        {
+
+            Context c = new Context();
+            var userinfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            if (userinfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(userinfo.WriterMail, false);
+                Session["WriterMail"] = userinfo.WriterMail;
+                return RedirectToAction("MyHeadings", "WriterPanel");
+            }
+            else
+            {
+                return RedirectToAction("WriterLogin");
+            }
+        }
+
     }
 }

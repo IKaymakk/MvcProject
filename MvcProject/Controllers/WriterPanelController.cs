@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -18,9 +19,12 @@ namespace MvcProject.Controllers
         {
             return View();
         }
-        public ActionResult MyHeadings()
+        public ActionResult MyHeadings(string p)
         {
-            var values = hm.GetlistByWriter();
+            Context c = new Context();
+            p = (string)Session["WriterMail"];
+            var writeridinfo=c.Writers.Where(x=>x.WriterMail==p).Select(y=>y.WriterID).FirstOrDefault();
+            var values = hm.GetlistByWriter(writeridinfo);
             return View(values);
         }
        
