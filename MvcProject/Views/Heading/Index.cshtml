@@ -7,16 +7,28 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div style="padding:0.5em 2em 2em 2em" class="page-header">
+    <div class="header-left">
+        <div class="menu-icon dw dw-menu"></div>
+        <div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+        <div class="header-search">
+            @using (Html.BeginForm("Index", "Heading", FormMethod.Post))
+            {
+                <div style="display:flex;padding:1.3em 5em 0em 16em" class="form-group mb-0">
+                    <div style="display:flex;width:35%;padding-top:0.4em">
+                        <h5 style="color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 100; padding-left: 0.5em; padding-top: 0.1em;"><a class="text-primary">@ViewBag.HeadingCount</a> Adet Başlık Mevcut</h5>
+                    </div>
+                    <div style="display:flex;width:100%">
+                        <input type="text" name="a" style="max-width:50%;height:35px;background-color:#ebebeb" class="text-danger form-control search-input" placeholder="Başlık Adı">
+                        <input style="height:38px" type="submit" class="btn btn-info" value="Ara" />
+                    </div>
 
-<div style="padding:1em 1.5em 0em 1.5em">
-    <div class="page-header" style="background-color:white; width: 100%; height: 60px; display: flex">
-        <div style="display:flex">
-            <div style="padding-top: -0em;padding-left:0.3em;font-weight:bold">
-                <i style="color:black" data-feather="briefcase" width="20"></i>
-            </div>
-            <h5 style="color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 100; padding-left: 0.5em; padding-top: 0.1em;">@ViewBag.HeadingCount Adet Başlık Mevcut</h5>
+                </div>
+            }
         </div>
     </div>
+</div>
+<div style="padding:0em 1.5em 0em 1.5em">
     <div style="padding-top:0em" class="table-responsive">
         <table class="table table-hover" style="background-color:white;color:black;">
             <tr class="table btn-outline-primary" style="text-align:center;">

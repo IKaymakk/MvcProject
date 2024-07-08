@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -67,6 +68,11 @@ namespace BusinessLayer.Concrete
         public List<Heading> GetlistByWriter(int id)
         {
             return _headingdal.List(x => x.WriterID == id);
+        }
+
+        public List<Heading> SearchingList(string p)
+        {
+            return _headingdal.List(x => x.HeadingName.Contains(p));
         }
     }
 }

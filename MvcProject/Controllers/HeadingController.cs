@@ -10,6 +10,8 @@ using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using PagedList;
 using PagedList.Mvc;
+using Newtonsoft.Json.Linq;
+
 namespace MvcProject.Controllers
 {
     public class HeadingController : Controller
@@ -17,12 +19,20 @@ namespace MvcProject.Controllers
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         WriterManager wm = new WriterManager(new EfWriterDal());
-        public ActionResult Index(int p=1)
+        public ActionResult Index(string a, int p = 1)
         {
             var count = hm.HeadingCount();
             ViewBag.HeadingCount = count;
-            var values = hm.Getlist().ToPagedList(p,5);
-            return View(values);
+            if (a == null)
+            {
+                var values2 = hm.Getlist().ToPagedList(p, 10);
+                return View(values2);
+            }
+            else
+            {
+                var values = hm.SearchingList(a).ToPagedList(p, 10);
+                return View(values);
+            }
         }
         [HttpGet]
         public ActionResult AddHeading()

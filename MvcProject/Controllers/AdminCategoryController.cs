@@ -21,6 +21,7 @@ namespace MvcProject.Controllers
         {
             int categoryCount = cm.GetCategoryCount();
             ViewBag.CategoryCount = categoryCount;
+
             var values = cm.GetList();
             return View(values);
         }
