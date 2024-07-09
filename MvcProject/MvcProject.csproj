@@ -4261,6 +4261,9 @@
     <Content Include="web\webfonts\fa-solid-900.ttf" />
     <Content Include="web\webfonts\fa-solid-900.woff" />
     <Content Include="web\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\AdminCategory\CategoryReportTable.cshtml" />
+    <Content Include="Views\Heading\HeadingReportTable.cshtml" />
+    <Content Include="Views\Writer\WriterReportTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

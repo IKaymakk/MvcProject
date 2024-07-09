@@ -49,6 +49,11 @@ namespace MvcProject.Controllers
             }
             return View();
         }
+        public ActionResult CategoryReportTable()
+        {
+            var values = cm.GetList();
+            return View(values);
+        }
         public ActionResult DeleteCategory(int id)
         {
             var value = cm.GetCategory(id);
@@ -80,7 +85,11 @@ namespace MvcProject.Controllers
             }
             return View();
         }
-
+        public ActionResult ChangeCategoryStatus(int id)
+        {
+            cm.ChangeStatus(id);
+            return RedirectToAction("Index");
+        }
 
     }
 }

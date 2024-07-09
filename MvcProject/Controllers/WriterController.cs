@@ -75,5 +75,10 @@ namespace MvcProject.Controllers
             wm.WriterStatus(id);
             return RedirectToAction("Index");
         }
+        public ActionResult WriterReportTable()
+        {
+            var values = wm.GetList();
+            return View(values);
+        }
     }
 }

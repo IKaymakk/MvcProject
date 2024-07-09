@@ -62,7 +62,7 @@ namespace BusinessLayer.Concrete
 
         public void HeadingDelete(Heading heading)
         {
-            throw new NotImplementedException();
+            _headingdal.Delete(heading);
         }
 
         public List<Heading> GetlistByWriter(int id)
